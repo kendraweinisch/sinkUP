@@ -1,0 +1,23 @@
+.navbar {
+    margin-bottom: 0;
+}
+.person-wrapper {
+    margin-bottom: 2em;
+}
+.profile-pic {
+    width: 50%;
+}
+.btn-primary {
+    background: none;
+    border: none;
+    border-radius: 0;
+    background-color: rebeccapurple;
+}
+h3 {
+    margin-bottom: 1em;
+}
+.topprofiles { 
+    display: inline-block;
+    float: left;
+    width: 20%;
+    }

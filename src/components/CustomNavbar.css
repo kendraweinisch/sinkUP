@@ -1,0 +1,42 @@
+nav.navbar navbar-default {
+    background-image: none;
+    background-color: white !important;
+}
+.navbar-collapse {
+    background-image: none;
+    background-color: white !important;
+}
+.navbar-default {
+    background-color: white !important;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+}
+.navbar-default .navbar-nav > li > a {
+    color: black;
+}
+.navbar-default .navbar-toggle
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: darkred
+}
+.navbar-default .navbar-toggle:focus, .navbar-default { 
+background-color: black;
+background-image: none;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand.hover {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-brand {
+    color: white;
+    background-color: transparent;
+}
+#topprofiles {
+    display: block;
+    clear: both;
+}
+.navbar-brand {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding: 0 0;
+}

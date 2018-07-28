@@ -1,0 +1,10 @@
+.header-image {
+    width: 100%;
+    margin-bottom: 2em;
+    margin-top: -2em;
+}
+.about-profile-pic {
+    float:left;
+    width: 100em;
+    margin: 0 1em 1em 0;
+}
