@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
-import News from './components/News';
+import Quiz from './components/Quiz';
 import Navbar from './components/CustomNavbar';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
 <Navbar />
   <Route exact path='/' component={Home} />
   <Route path='/match' component={About} />
-  <Route path='/news' component={News} />
+  <Route path='/quiz' component={Quiz} />
 </div>       
  </Router>
     );

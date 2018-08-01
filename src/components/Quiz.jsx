@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
-import './News.css';
+import './Quiz.css';
 
 
 export default class News extends Component {
@@ -9,7 +9,7 @@ export default class News extends Component {
             <div>
                 <Image src="assets/person-1.jpg" className="header-image" />
                 <Grid>
-                    <h2>News</h2>
+                    <h2>Quiz</h2>
                     <Row>
                         <Col xs={12} sm={8} className="main-section">
                         <p>

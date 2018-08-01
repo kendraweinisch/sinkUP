@@ -10,7 +10,7 @@ render() {
 <Navbar.Header>
     <Navbar.Brand>
         <div id="navlogo"></div>
-        <a href="/">   <img src="assets/sinkUpLogo.jpg" height="50" width="50" className="navlogo" />
+        <a href="/">   <img src="assets/sinkUpLogo.jpg" height="50" width="50" className="navlogo" alt="Sink Up logo" />
         </a>
 
           </Navbar.Brand>
@@ -24,7 +24,7 @@ render() {
         <NavItem eventKey={2} componentClass={Link} href="/match" to="/match">
         About
         </NavItem>
-        <NavItem eventKey={3} componentClass={Link} href="/news" to="/news">
+        <NavItem eventKey={3} componentClass={Link} href="/quiz" to="/quiz">
         Sign In
         </NavItem>
 
