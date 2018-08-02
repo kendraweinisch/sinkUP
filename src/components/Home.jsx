@@ -14,24 +14,25 @@ export default class Home extends Component {
                     <Image src="assets/person-4.jpg" square className="topprofiles" />
                     <Image src="assets/person-5.jpg" square className="topprofiles" />
                 </Row>
-                
+
                 <div class="logodiv">
 
                     <Row>
                         <Image src="assets/sinkUpLogo.jpg" square className="SULogo" />
-                        <p>Desire the "Dual Income, No Kids (DINK)" lifestyle? Meet other singles not looking to have children!</p>
+                        <div class="frontpage">
+                            <h3>Desire the "Dual Income, No Kids (DINK)" lifestyle? Meet other singles not looking to have children!</h3>
 
-                        <DropdownButton bsSize="large" title="Who are you looking to meet?" id="dropdown-size-large">
-                            <MenuItem eventKey="1">Woman Looking for Man</MenuItem>
-                            <MenuItem eventKey="2">Man Looking for Woman</MenuItem>
-                            <MenuItem eventKey="3">Woman Looking for Woman</MenuItem>
-                            <MenuItem eventKey="4">Man Looking for Man</MenuItem>
-                        </DropdownButton>
+                            <DropdownButton bsSize="large" title="Who are you looking to meet?" id="dropdown-size-large">
+                                <MenuItem eventKey="1">Woman Looking for Man</MenuItem>
+                                <MenuItem eventKey="2">Man Looking for Woman</MenuItem>
+                                <MenuItem eventKey="3">Woman Looking for Woman</MenuItem>
+                                <MenuItem eventKey="4">Man Looking for Man</MenuItem>
+                            </DropdownButton>
 
-                        <a href="/">
-                            <Button bsStyle="secondary search">Search Now</Button>
-                        </a>
-
+                            <a href="/quiz">
+                                <Button bsStyle="secondary search">Search Now</Button>
+                            </a>
+                        </div>
                     </Row>
                 </div>
                 <Row>
