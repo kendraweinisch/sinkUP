@@ -18,7 +18,7 @@ export default class Home extends Component {
                 <div class="logodiv">
 
                     <Row>
-                        <Image src="assets/sinkUpLogo.jpg" square className="SULogo" />
+                        <Image src="assets/sinkUpLogo.png" square className="SULogo" />
                         <div class="frontpage">
                             <h3>Desire the "Dual Income, No Kids (DINK)" lifestyle? Meet other singles not looking to have children!</h3>
 

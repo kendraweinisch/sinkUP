@@ -1,10 +1,18 @@
 const questions = [
     
-        "Do you like water sports?",
-        "Do you like animals?",
-        "Do you have a pet alligator?"
-    
+        "I see myself being a parent",
+        "I see myself as a traveller",
+        "I see myself as a homebody",
+        "I see myself as a night owl",
+        "I see myself as ambitious",
+        "I see myself as even-tempered",
+        "I see myself as a beach person",
+        "I see myself as a reader",
+        "I see myself as a humorous",
+        "I see myself owning pets",
+        "I like being the center of attention",
 ]
-const answers = ["1-hate it", "2-its okay", "3-like it", "4-love it"]
+const answers = ["1 - Not me at all", "2 - That describes me a small percentage of the time",
+ "3 - Sometimes describes me", "4 - That's me in a nutshell"]
 
 export default {questions, answers}

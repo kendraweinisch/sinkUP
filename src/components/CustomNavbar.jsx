@@ -10,7 +10,7 @@ render() {
 <Navbar.Header>
     <Navbar.Brand>
         <div id="navlogo"></div>
-        <a href="/">   <img src="assets/sinkUpLogo.jpg" height="50" width="50" className="navlogo" alt="Sink Up logo" />
+        <a href="/">   <img src="assets/sinkUpLogo.png" height="50" width="50" className="navlogo" alt="Sink Up logo" />
         </a>
 
           </Navbar.Brand>
