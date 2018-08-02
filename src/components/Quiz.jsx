@@ -1,3 +1,5 @@
+// This page needs zip code, man looking for man, age range, user name and password setup
+
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import './Quiz.css';
