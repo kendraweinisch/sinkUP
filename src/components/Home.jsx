@@ -20,7 +20,8 @@ export default class Home extends Component {
                     <Row>
                         <Image src="assets/sinkUpLogo.png" square className="SULogo" />
                         <div class="frontpage">
-                            <h3>Desire the "Dual Income, No Kids (DINK)" lifestyle? Meet other singles not looking to have children!</h3>
+                            <h3>Desire the "Dual Income, No Kids (DINK)" lifestyle?</h3>
+                            <h3> Meet other singles not looking to have children!</h3>
 
                             <DropdownButton bsSize="large" title="Who are you looking to meet?" id="dropdown-size-large">
                                 <MenuItem eventKey="1">Woman Looking for Man</MenuItem>

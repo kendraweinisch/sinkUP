@@ -6,12 +6,14 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                <Image src="assets/person-1.jpg" className="header-image" />
                 <Grid>
                     <Col xs={12} sm={8} smOffset={2}>
-                    <Image src="assets/person-1.jpg" className="about-profile-pic" rounded />
-                    <h3>Frank the Tank</h3>
-                    <p>Maybe there's a little something happening right here. It's hard to see things when you're too close. Take a step back and look. If you didn't have baby clouds, you wouldn't have big clouds. Exercising the imagination, experimenting with talents, being creative; these things, to me, are truly the windows to your soul. You can do anything here - the only pre-requisite is that it makes you happy.</p>
+                    <h3>About SINK Up</h3>
+                    <p>Gone are the days when nuclear families were the norm and childless people were stigmatized. More people today are choosing not to have kids,
+                        thus allowing them to enjoy disposable income as well as freedom from dirty diapers and PTA meetings. Mainstream dating sites
+                        are dominated by breeders, so even people not looking to have children have to leave the option open just to find a date. SINK Up is different. 
+                        Our singles know children won't be in their future--but love and adventure will be!
+                    </p>
                     </Col>
                     </Grid>
                  </div>
