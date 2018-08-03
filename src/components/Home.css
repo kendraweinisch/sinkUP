@@ -1,35 +1,55 @@
-.frontpage {
-    float: right;
+body {
+    overflow-x: hidden;
 }
+
+/* .frontpage {
+    float: right;
+} */
+
 .navbar {
     margin-bottom: 0;
 }
+
 .person-wrapper {
     margin-bottom: 2em;
 }
+
 .profile-pic {
     width: 50%;
 }
+
 .btn-primary {
     background: none;
     border: none;
     border-radius: 0;
     background-color: rebeccapurple;
 }
+
 h3 {
     margin-bottom: 1em;
 }
+
 .search {
-    color: darkred
+    color: white;
+    background-image: none;
+    background-color: #356b89;
 }
+
 .SULogo {
-    margin-left: 10%;
-    height: 8%;
-    width: 20%;
+    height: 200px;
 }
-.topprofiles { 
+
+.home-heading {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h3 {
+    color: #356b89 !important;
+}
+
+.topprofiles {
     display: inline-block;
     float: left;
     width: 20%;
     height: 165px;
-    }
+}
