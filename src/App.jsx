@@ -6,6 +6,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Quiz from './components/Quiz';
 import Navbar from './components/CustomNavbar';
+import LoginPage from './components/LoginPage/LoginPage';
+
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
   <Route exact path='/' component={Home} />
   <Route path='/about' component={About} />
   <Route path='/quiz' component={Quiz} />
+  <Route path="/authentication" component={LoginPage} />
 </div>       
  </Router>
     );
