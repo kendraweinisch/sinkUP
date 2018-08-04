@@ -19,11 +19,7 @@ export default class Home extends Component {
                 <Row className="text-center">
                     <Col md={2}/>
                     <Col md={8} className="home-heading">
-                    <Media>
-                    <Media.Left>
                         <Image src="assets/sinkUpLogo.png" className="SULogo"/>
-                    </Media.Left>
-                    <Media.Body>
                             <h3>Desire the "Dual Income, No Kids (DINK)" lifestyle?</h3>
                             <h3> Meet other singles not looking to have children!</h3>
 
@@ -37,8 +33,6 @@ export default class Home extends Component {
                             <a href="/quiz"> 
                                 <Button className="search">Search Now</Button>
                             </a>
-                    </Media.Body>
-                    </Media>
                     </Col>
                     <Col md={2}/>
                 </Row>

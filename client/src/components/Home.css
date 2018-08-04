@@ -29,6 +29,11 @@ h3 {
     margin-bottom: 1em;
 }
 
+.middle-row {
+    z-index: 999;
+    overflow: visible;
+}
+
 .search {
     color: white;
     background-image: none;
@@ -37,6 +42,7 @@ h3 {
 
 .SULogo {
     height: 200px;
+    float: left;
 }
 
 .home-heading {
@@ -49,7 +55,7 @@ h3 {
 
 .topprofiles {
     display: inline-block;
-    float: left;
     width: 20%;
     height: 165px;
+    z-index: -1;
 }
