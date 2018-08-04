@@ -1,6 +1,6 @@
-const express = require ('express')
-const router = express.Router()
-router.get("/", function(req, res){
-    res.send("test")
-})
-module.exports=router
+const express = require ('express');
+const router = express.Router();
+const userRoutes = require ('./users.js');
+router.use("/api/users", userRoutes);
+
+module.exports=router;
