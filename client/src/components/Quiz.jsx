@@ -1,7 +1,7 @@
 // This page needs zip code, man looking for man, age range, user name and password setup
 
 import React from 'react';
-import { Image, HTMLDivElement, FormControl, FormGroup, ControlLabel, HelpBlock } from 'react-bootstrap';
+import {  FormControl, FormGroup, ControlLabel, Jumbotron } from 'react-bootstrap';
 import Question from "./Question";
 import './Quiz.css';
 import questiondata from "../questiondata"
@@ -34,13 +34,19 @@ export default class Userform extends React.Component {
         this.setState({ [field]: e.target.value });
     }
 
+  
     render() {
         return (
+            <div>
+            <Jumbotron>
+            <h1>Getting to Know You</h1>
+           </Jumbotron>;
+         
 
-            <FormGroup
+            <FormGroup>
                 controlId="formBasicText"
                 validationState={this.getValidationState()}
-            >
+            
                 <ControlLabel>Please enter your first name</ControlLabel>
                 <FormControl
                     type="text"
@@ -66,7 +72,7 @@ export default class Userform extends React.Component {
                 <ControlLabel>Scale of 1-4</ControlLabel>
             </FormGroup>
             
-
+            </div>
         );
     }
 }                                  

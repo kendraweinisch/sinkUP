@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, DropdownButton, MenuItem } from 'react-bootstrap';
 import questiondata from "../questiondata"
+const ANSWERS = questiondata.answers;
+
+function renderDropdownButton() {
+    return (
+        <DropdownButton
+        bsStyle="Primary"
+      title={"Choose an answer"}
+    //   id={`dropdown-basic-${}`}
+    >
+    {ANSWERS.map((answer, key)=><MenuItem eventKey={key}>{answer}</MenuItem>)}
+</DropdownButton>
+    )
+}
 
 const Question = props => {
     return (
@@ -9,7 +22,7 @@ const Question = props => {
                 {props.question}
             </span>
             <div>
-                {questiondata.answers.map(answer=><span onClick={()=>props.selectfn(answer)}>{answer}</span>)}
+                {renderDropdownButton()}
                 </div>
         </div>
     )
