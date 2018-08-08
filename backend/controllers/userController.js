@@ -1,6 +1,18 @@
 var db = require("../models");
 
 module.exports = {
+
+idparam: function(req, res, next, id) {
+  db.User
+  .find({_id: id})
+  .then(function(user) {
+    req.user = user
+    next()
+  })
+},
+getBYID: function(req, res){
+  res.json(req.user)
+},
   // Find all users, sort them, then send them back to the user
   findAll: function(req, res) {
     db.User
@@ -23,3 +35,4 @@ module.exports = {
     });
   }
 };
+

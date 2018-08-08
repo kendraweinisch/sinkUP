@@ -8,25 +8,46 @@ const userSchema = new Schema({
   userName: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    unique: {
+      index: {
+        unique: true
+      }
+    }
   },
   userEmail: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    unique: {
+      index: {
+        unique: true,
+      }
+    }
   },
   userPhoto: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    unique: {
+      index: {
+        unique: true,
+      }
+    }
   },
   genderCombo: {
     type: String,
-    required: true
+    required: false,
   },
   quizScore: {
     type: Number,
-    required: true
+    required: false,
+  },
+  googleID: {
+    type: String,
+    required: true,
+    unique: {
+      index: {
+        unique: true,
+      }
+    }
   }
 });
 

@@ -12,11 +12,10 @@
     align-items: center;
 }
 .mainContainer {
-    width: 60%;
+    width: 100%;
     border: 25px solid #356b89;
     padding: 25px;
-    margin: 25px;
-    display: flex;
+    display: fluid;
     justify-content: center;
     align-items: center;
 }
