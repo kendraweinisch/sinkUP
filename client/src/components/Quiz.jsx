@@ -1,10 +1,9 @@
-// This page needs zip code, man looking for man, age range, user name and password setup
-
 import React from 'react';
-import { Image, HTMLDivElement, FormControl, FormGroup, ControlLabel, HelpBlock } from 'react-bootstrap';
+import {  FormControl, FormGroup, ControlLabel, Jumbotron, Button } from 'react-bootstrap';
 import Question from "./Question";
 import './Quiz.css';
 import questiondata from "../questiondata"
+import Dates from "./matches"
 
 export default class Userform extends React.Component {
     constructor(props, context) {
@@ -24,9 +23,10 @@ export default class Userform extends React.Component {
         return null;
     }
 
-    selectanswer(answer) {
+    selectanswer(number, answer) {
         let state = Object.assign({}, this.state)
-        state.answers.push(answer)
+        state.answers[number]=answer
+        console.log(state.answers)
         this.setState(state)
     }
 
@@ -34,13 +34,68 @@ export default class Userform extends React.Component {
         this.setState({ [field]: e.target.value });
     }
 
+    determineMatch(answersArr) {
+       
+    var bestMatch = {
+      name: "",
+      photo: "",
+      friendDifference: Infinity
+    };
+
+    var totalDifference;
+
+    // Here we loop through all the friend possibilities in the database.
+<ul>
+    {Dates.map((item)=><li>{item}</li>)}
+</ul>
+
+    for (var i = 0; i < Dates.length; i++) {
+      var currentFriend = Dates[i];
+      totalDifference = 0;
+7
+      console.log(currentFriend.name);
+
+      // We then loop through all the scores of each friend
+      for (var j = 0; j < currentFriend.scores.length; j++) {
+        var currentFriendScore = currentFriend.scores[j];
+        var currentUserScore = answersArr[j];
+
+        // We calculate the difference between the scores and sum them into the totalDifference
+        totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
+      }
+
+      // If the sum of differences is less then the differences of the current "best match"
+      if (totalDifference <= bestMatch.friendDifference) {
+        // Reset the bestMatch to be the new friend.
+        bestMatch.name = currentFriend.name;
+        bestMatch.photo = currentFriend.photo;
+        bestMatch.friendDifference = totalDifference;
+      }
+    }
+
+    // Finally save the user's data to the database (this has to happen AFTER the check. otherwise,
+    // the database will always return that the user is the user's best friend).
+    Dates.push(answersArr);
+
+    // Return a JSON with the user's bestMatch. This will be used by the HTML in the next pagebest
+    console.log(bestMatch, answersArr)
+    return (bestMatch);
+ 
+
+}
+     
     render() {
         return (
+            <div>
+            <Jumbotron>
+            <h1>Getting to Know You</h1>
+           </Jumbotron>;
+         
 
-            <FormGroup
-                controlId="formBasicText"
-                validationState={this.getValidationState()}
-            >
+            <FormGroup>
+                {/* controlId="formBasicText"
+                validationState={this.getValidationState()} */}
+            
                 <ControlLabel>Please enter your first name</ControlLabel>
                 <FormControl
                     type="text"
@@ -62,11 +117,19 @@ export default class Userform extends React.Component {
                 />
                 <FormControl.Feedback />
                
-                {questiondata.questions.map(question => (<Question question={question} selectfn={this.selectanswer} />))}
+                {questiondata.questions.map((question, i) => (
+                    <div>
+                    <p>{question}</p>
+                <Question question={question} choice={this.state.answers[i]} number={i} selectfn={this.selectanswer} />
+                </div>
+            ))}
                 <ControlLabel>Scale of 1-4</ControlLabel>
             </FormGroup>
+            <button onClick={()=>{ this.determineMatch(this.state.answers); }}>Submit to Find Match</button>
             
+            </div>
 
         );
-    }
-}                                  
+    
+    }           
+}
