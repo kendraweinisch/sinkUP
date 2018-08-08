@@ -1,4 +1,21 @@
 .sidebat-section img {
-    width: 100%;
+    width: 50%;
     margin-bottom: 2em;
+}
+.jumbotron {
+    background-color: #356b89;
+    color: white;
+    background-image: none;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainContainer {
+    width: 100%;
+    border: 25px solid #356b89;
+    padding: 25px;
+    display: fluid;
+    justify-content: center;
+    align-items: center;
 }

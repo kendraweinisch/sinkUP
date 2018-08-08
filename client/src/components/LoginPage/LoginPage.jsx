@@ -5,7 +5,15 @@ const clientId = '1086638400321-96p0sokdamjj9ape2gfja03dj87vajir.apps.googleuser
 // import GoogleLogin, { GoogleLogout } from '../dist/google-login'
 
 const success = response => {
-  console.log(response)
+  console.log(response.profileObj)
+  let user = {
+    googleID: response.profileObj.googleId,
+    userName: response.profileObj.name,
+    userEmail: response.profileObj.email,
+    userPhoto: response.profileObj.imageUrl,
+  }
+  console.log(user)
+
 };
 
 const error = response => {
@@ -22,31 +30,31 @@ const logout = () => {
 
 class LoginPage extends Component {
 
-render() {
+  render() {
     return (
-<div>
-    <GoogleLogin
-      clientId={clientId}
-      onSuccess={success}
-      onFailure={error}
-      onRequest={loading}
-      offline={false}
-      approvalPrompt="force"
-      responseType="id_token"
-      isSignedIn
-      // disabled
-      // prompt="consent"
-      // className='button'
-      // style={{ color: 'red' }}
-    >
-      <span>Log In</span>
-    </GoogleLogin>
+      <div>
+        <GoogleLogin
+          clientId={clientId}
+          onSuccess={success}
+          onFailure={error}
+          onRequest={loading}
+          offline={false}
+          approvalPrompt="force"
+          responseType="id_token"
+          isSignedIn
+        // disabled
+        // prompt="consent"
+        // className='button'
+        // style={{ color: 'red' }}
+        >
+          <span>Log In</span>
+        </GoogleLogin>
 
-    <GoogleLogout buttonText="Logout" onLogoutSuccess={logout} />
-</div>
+        <GoogleLogout buttonText="Logout" onLogoutSuccess={logout} />
+      </div>
     )
-}
-  
+  }
+
 }
 
 export default LoginPage;
