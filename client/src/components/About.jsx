@@ -13,7 +13,7 @@ export default class About extends Component {
                         thus allowing them to enjoy disposable income as well as freedom from dirty diapers and PTA meetings. Mainstream dating sites
                         are dominated by breeders, so even people not looking to have children have to leave the option open just to find a date. SINK Up is different. 
                         </p>
-                        <p>Our singles know children won't be in their future--but love and adventure will be!!
+                        <p>Our singles know children won't be in their future--but love and adventure will be!
                     </p>
                     </Col>
                     </Grid>
