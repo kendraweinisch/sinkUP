@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Jumbotron, Grid, Row, Col, Image, Button, DropdownButton, MenuItem, Media } from 'react-bootstrap';
+import { Row, Col, Image, Button, DropdownButton, MenuItem } from 'react-bootstrap';
 import './Home.css';
+
+let preferenceRedirect
+const storePreference = (eventKey) => {
+preferenceRedirect = "/quiz?sexuality=" + eventKey
+}
 
 export default class Home extends Component {
     render() {
@@ -24,13 +29,13 @@ export default class Home extends Component {
                             <h3> Meet other singles not looking to have children!</h3>
 
                             <DropdownButton className="search" title="Who are you looking to meet?" id="dropdown-size-large">
-                                <MenuItem eventKey="1">Woman Looking for Man</MenuItem>
-                                <MenuItem eventKey="2">Man Looking for Woman</MenuItem>
-                                <MenuItem eventKey="3">Woman Looking for Woman</MenuItem>
-                                <MenuItem eventKey="4">Man Looking for Man</MenuItem>
+                                <MenuItem onclick={storePreference('1')}>Woman Looking for Man</MenuItem>
+                                <MenuItem onclick={storePreference('2')}>Man Looking for Woman</MenuItem>
+                                <MenuItem onclick={storePreference('3')}>Woman Looking for Woman</MenuItem>
+                                <MenuItem onclick={storePreference('4')}>Man Looking for Man</MenuItem>
                             </DropdownButton>
                             &nbsp;
-                            <a href="/quiz"> 
+                            <a href={preferenceRedirect}> 
                                 <Button className="search">Search Now</Button>
                             </a>
                     </Col>

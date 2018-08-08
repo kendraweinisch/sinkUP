@@ -1,5 +1,4 @@
 const questions = [
-    
         "I see myself being a parent",
         "I see myself as a traveller",
         "I see myself as a homebody",

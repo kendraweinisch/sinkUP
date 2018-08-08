@@ -31,4 +31,5 @@ let matches = [{
       ]
   }
 ]
-module.exports = matches
+
+export default matches
