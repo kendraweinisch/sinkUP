@@ -8,7 +8,7 @@ var app = express();
 var routes = require("./backend/routes");
 
 // Designate public folder as a static directory
-app.use(express.static("client/public"));
+app.use(express.static("client/build"));
 
 // Use bodyParser in our app
 app.use(bodyParser.urlencoded({ extended: true }));
