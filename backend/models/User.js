@@ -8,16 +8,33 @@ const userSchema = new Schema({
   name: {
     type: String,
     required: true,
+<<<<<<< HEAD
     // unique: { index: { unique: true } }
+=======
+    unique: {
+      index: {
+        unique: true
+      }
+    }
+>>>>>>> d8f11a9349628815bf88d8ca2fb23ac4320f0ee9
   },
   email: {
     type: String,
     required: true,
+<<<<<<< HEAD
     // unique: { index: { unique: true } }
+=======
+    unique: {
+      index: {
+        unique: true,
+      }
+    }
+>>>>>>> d8f11a9349628815bf88d8ca2fb23ac4320f0ee9
   },
   photo: {
     type: String,
     required: true,
+<<<<<<< HEAD
     // unique: { index: { unique: true } }
   },
   genderCombo: {
@@ -31,6 +48,30 @@ const userSchema = new Schema({
   googleId: {
     type: String,
     required: true
+=======
+    unique: {
+      index: {
+        unique: true,
+      }
+    }
+  },
+  genderCombo: {
+    type: String,
+    required: false,
+  },
+  quizScore: {
+    type: Number,
+    required: false,
+  },
+  googleID: {
+    type: String,
+    required: true,
+    unique: {
+      index: {
+        unique: true,
+      }
+    }
+>>>>>>> d8f11a9349628815bf88d8ca2fb23ac4320f0ee9
   }
 });
 

@@ -5,6 +5,7 @@ const clientId = '1086638400321-96p0sokdamjj9ape2gfja03dj87vajir.apps.googleuser
 // import GoogleLogin, { GoogleLogout } from '../dist/google-login'
 
 const success = response => {
+<<<<<<< HEAD
   console.log("successful login")
   const {profileObj} = response;
   console.log(profileObj);
@@ -29,6 +30,17 @@ const success = response => {
   .then(response => console.log('Success:', JSON.stringify(response)))
   .catch(error => console.error('Error:', error));
   // find a way to store googleId in state
+=======
+  console.log(response.profileObj)
+  let user = {
+    googleID: response.profileObj.googleId,
+    userName: response.profileObj.name,
+    userEmail: response.profileObj.email,
+    userPhoto: response.profileObj.imageUrl,
+  }
+  console.log(user)
+
+>>>>>>> d8f11a9349628815bf88d8ca2fb23ac4320f0ee9
 };
 
 const error = response => {
@@ -45,31 +57,31 @@ const logout = () => {
 
 class LoginPage extends Component {
 
-render() {
+  render() {
     return (
-<div>
-    <GoogleLogin
-      clientId={clientId}
-      onSuccess={success}
-      onFailure={error}
-      onRequest={loading}
-      offline={false}
-      approvalPrompt="force"
-      responseType="id_token"
-      isSignedIn
-      // disabled
-      // prompt="consent"
-      // className='button'
-      // style={{ color: 'red' }}
-    >
-      <span>Log In</span>
-    </GoogleLogin>
+      <div>
+        <GoogleLogin
+          clientId={clientId}
+          onSuccess={success}
+          onFailure={error}
+          onRequest={loading}
+          offline={false}
+          approvalPrompt="force"
+          responseType="id_token"
+          isSignedIn
+        // disabled
+        // prompt="consent"
+        // className='button'
+        // style={{ color: 'red' }}
+        >
+          <span>Log In</span>
+        </GoogleLogin>
 
-    <GoogleLogout buttonText="Logout" onLogoutSuccess={logout} />
-</div>
+        <GoogleLogout buttonText="Logout" onLogoutSuccess={logout} />
+      </div>
     )
-}
-  
+  }
+
 }
 
 export default LoginPage;
