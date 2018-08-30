@@ -5,27 +5,31 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  userName: {
+  name: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    // unique: { index: { unique: true } }
   },
-  userEmail: {
+  email: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    // unique: { index: { unique: true } }
   },
-  userPhoto: {
+  photo: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    // unique: { index: { unique: true } }
   },
   genderCombo: {
     type: String,
-    required: true
+    required: false
   },
   quizScore: {
     type: Number,
+    required: false
+  },
+  googleId: {
+    type: String,
     required: true
   }
 });
