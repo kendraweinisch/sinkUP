@@ -25,7 +25,7 @@ const success = response => {
     }
   }).then(res => {
     console.log("response from api");
-    res.json()})
+    return res.json()})
   .then(response => console.log('Success:', JSON.stringify(response)))
   .catch(error => console.error('Error:', error));
   // find a way to store googleId in state
@@ -44,7 +44,10 @@ const logout = () => {
 };
 
 class LoginPage extends Component {
-
+  constructor(props) { 
+    super(props) 
+    console.log(props)
+}
   render() {
     return (
       <div>

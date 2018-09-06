@@ -10,17 +10,36 @@ import LoginPage from './components/LoginPage/LoginPage';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: null
+    }
+    this.saveUser = this.saveUser.bind(this)
+    this.renderLogInPage = this.renderLogInPage.bind(this)
+  }
+  
+  saveUser(user) {
+    let state = Object.assign({}, this.state)
+    state.user = user
+    this.setState(state)
+  }
+renderLogInPage() {
+  return <LoginPage userfn = {this.saveUser} />
+}
   render() {
+    let logInProps = {user: this.state.user, saveUserfn: this.saveUser}
     return (
       <Router>
-<div>
-<Navbar />
-  <Route exact path='/' component={Home} />
-  <Route path='/about' component={About} />
-  <Route path='/quiz' component={Quiz} />
-  <Route path="/authentication" component={LoginPage} />
-</div>       
- </Router>
+        <div>
+          <Navbar />
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/quiz' component={Quiz} />
+          <Route path="/authentication" render={() => this.renderLogInPage}/>
+          {/* <Route path="/authentication" component={LoginPage} /> */}
+        </div>
+      </Router>
     );
   }
 }

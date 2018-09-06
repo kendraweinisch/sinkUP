@@ -15,6 +15,8 @@
     "start": "npm run start:prod",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:back": "nodemon ./server.js",
+    "start:front": "npm run client",
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",

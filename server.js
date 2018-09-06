@@ -18,11 +18,11 @@ app.use(bodyParser.json());
 app.use(routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/sinkup";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/sinkup";
 
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
 // Listen on the port 3000
 app.listen(PORT, function() {

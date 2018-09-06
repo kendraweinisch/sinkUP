@@ -48,7 +48,8 @@ getBYID: function(req, res){
     console.log(newUser)
     newUser.save()
     .then(function(savedUser){
-      res.json(savedUser)
+      console.log(savedUser)
+      res.json({data: savedUser})
     })
   }
 
