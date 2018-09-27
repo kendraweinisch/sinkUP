@@ -29,10 +29,10 @@ export default class Home extends Component {
                             <h3> Meet other singles not looking to have children!</h3>
 
                             <DropdownButton className="search" title="Who are you looking to meet?" id="dropdown-size-large">
-                                <MenuItem onclick={storePreference('1')}>Woman Looking for Man</MenuItem>
-                                <MenuItem onclick={storePreference('2')}>Man Looking for Woman</MenuItem>
-                                <MenuItem onclick={storePreference('3')}>Woman Looking for Woman</MenuItem>
-                                <MenuItem onclick={storePreference('4')}>Man Looking for Man</MenuItem>
+                                <MenuItem onClick={storePreference('1')}>Woman Looking for Man</MenuItem>
+                                <MenuItem onClick={storePreference('2')}>Man Looking for Woman</MenuItem>
+                                <MenuItem onClick={storePreference('3')}>Woman Looking for Woman</MenuItem>
+                                <MenuItem onClick={storePreference('4')}>Man Looking for Man</MenuItem>
                             </DropdownButton>
                             &nbsp;
                             <a href={preferenceRedirect}> 

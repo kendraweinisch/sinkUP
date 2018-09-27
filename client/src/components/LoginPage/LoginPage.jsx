@@ -4,33 +4,6 @@ import { GoogleLogout, GoogleLogin } from '../Authentication';
 const clientId = '1086638400321-96p0sokdamjj9ape2gfja03dj87vajir.apps.googleusercontent.com';
 // import GoogleLogin, { GoogleLogout } from '../dist/google-login'
 
-const success = response => {
-  console.log("successful login")
-  const {profileObj} = response;
-  console.log(profileObj);
-  // this is where we send a request to create a new user
-  const newUser = {
-    "name": profileObj.name,
-    "email": profileObj.email,
-    "googleId": profileObj.googleId,
-    "photo": profileObj.imageUrl,
-  }
-  const url = "http://localhost:3001/api/users"
-  console.log("sending user to api");
-  fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(newUser), // data can be `string` or {object}!
-    headers:{
-      'Content-Type': 'application/json',
-    }
-  }).then(res => {
-    console.log("response from api");
-    return res.json()})
-  .then(response => console.log('Success:', JSON.stringify(response)))
-  .catch(error => console.error('Error:', error));
-  // find a way to store googleId in state
-};
-
 const error = response => {
   console.error(response)
 };
@@ -44,16 +17,48 @@ const logout = () => {
 };
 
 class LoginPage extends Component {
-  constructor(props) { 
-    super(props) 
+  constructor(props) {
+    super(props)
     console.log(props)
-}
+    this.success = this.success.bind(this)
+  }
+
+
+
+  success(response) {
+    console.log("successful login")
+    const { profileObj } = response;
+    // this is where we send a request to create a new user
+    const newUser = {
+      "name": profileObj.name,
+      "email": profileObj.email,
+      "googleId": profileObj.googleId,
+      "photo": profileObj.imageUrl,
+    }
+    const url = "http://localhost:3001/api/users"
+    fetch(url, {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(newUser), // data can be `string` or {object}!
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }).then(res => {
+      return res.json()
+    })
+      .then(response => {
+        console.log('Success:', response.data)
+        console.log(this.props)
+        this.props.userfn(response.data)
+      })
+      .catch(error => console.error('Error:', error));
+    // find a way to store googleId in state
+  }
   render() {
     return (
       <div>
         <GoogleLogin
           clientId={clientId}
-          onSuccess={success}
+          onSuccess={this.success}
           onFailure={error}
           onRequest={loading}
           offline={false}
