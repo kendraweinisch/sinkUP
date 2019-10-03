@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './CustomNavbar.css';
+import sinkUpLogo from './sinkUpLogo.PNG';
 
 export default class CustomNavbar extends Component {
 render() {
@@ -10,7 +11,7 @@ render() {
 <Navbar.Header>
     <Navbar.Brand>
         <div id="navlogo"></div>
-        <a href="/">   <img src="assets/sinkUpLogo.png" height="50" width="55" className="navlogo" alt="Sink Up logo" />
+        <a href="/">   <img src={sinkUpLogo} height="50" width="55" className="navlogo" alt="Sink Up logo" />
         </a>
 
           </Navbar.Brand>

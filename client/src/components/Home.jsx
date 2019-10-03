@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, Button, DropdownButton, MenuItem } from 'react-bootstrap';
 import './Home.css';
+import sinkUpLogo from './sinkUpLogo.PNG';
 
 let preferenceRedirect
 const storePreference = (eventKey) => {
@@ -24,7 +25,8 @@ export default class Home extends Component {
                 <Row className="text-center">
                     <Col md={2}/>
                     <Col md={8} className="home-heading">
-                        <Image src="assets/sinkUpLogo.png" className="SULogo"/>
+                        
+                        <Image src={sinkUpLogo} className="SULogo"/>
                             <h3>Desire the "Dual Income, No Kids (DINK)" lifestyle?</h3>
                             <h3> Meet other singles not looking to have children!</h3>
 
